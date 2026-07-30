@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Monagodu 501</title>
+  <meta name="description" content="Explore our facility, factory assembly line, corporate events, and complete product gallery through high-quality photos.">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Monagodu 501</div>
+  </div>
+
+  <!-- CURSOR GLOW -->
+  <div id="cursor-glow" class="cursor-glow"></div>
+
+  <!-- STICKY NAVBAR -->
+  <nav id="navbar" class="navbar navbar-solid">
+    <div class="container">
+      <a href="index.html" class="logo-container">
+        <img src="public/images/logo.png" alt="Monagodu 501 Logo" class="logo-image">
+      </a>
+      
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+          <svg class="moon-icon" viewBox="0 0 24 24"><path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.7.5-.1 1 .2 1.2.7.2.5 0 1.1-.4 1.4-2.8 2-3.8 5.8-2.3 8.9 1.5 3.1 4.7 4.9 8 4.9 1.4 0 2.8-.4 4-1.2.4-.3.9-.2 1.3.1.4.3.5.8.4 1.3-.9 4.7-5 8-9.8 8.2v.4zm-1.8-17.7c-3.4.9-5.8 4-5.8 7.6 0 4.4 3.6 8 8 8 3 0 5.6-1.7 6.9-4.3-.9.3-1.8.4-2.8.4-4.5 0-8.3-3.2-9-7.7h2.7z"/></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.01c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+        </button>
+
+        <a href="https://wa.me/919876543210" target="_blank" class="nav-whatsapp-btn hide-mobile">
+          <i class="fab fa-whatsapp"></i> +91 98765 43210
+        </a>
+      </div>
+
+      <div id="burger" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- INNER HEADER -->
+  <header class="inner-header">
+    <div class="container">
+      <h1 class="inner-title">Media Gallery</h1>
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Gallery</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- GALLERY GRID SECTION -->
+  <section class="section">
+    <div class="container">
+      
+      <!-- Filter Tabs -->
+      <div class="gallery-filter-tabs reveal">
+        <button class="filter-tab active" data-filter="all">All Photos</button>
+        <button class="filter-tab" data-filter="products">Our Products</button>
+        <button class="filter-tab" data-filter="factory">Factory</button>
+        <button class="filter-tab" data-filter="machinery">Machinery</button>
+        <button class="filter-tab" data-filter="events">Company Events</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="gallery-grid reveal">
+        <!-- Item 1: Product line -->
+        <div class="gallery-item glass" data-category="products">
+          <img src="public/images/washing_powder.png" alt="Washing Powder Box Display">
+          <div class="gallery-overlay">
+            <h3 class="gallery-item-title">501 Washing Powder</h3>
+            <p class="gallery-item-category">Products</p>
+          </div>
+        </div>
+
+        <!-- Item 2: Factory assembly -->
+        <div class="gallery-item glass" data-category="factory">
+          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1470&auto=format&fit=crop" alt="Detergent Factory Line">
+          <div class="gallery-overlay">
+            <h3 class="gallery-item-title">Automatic Packing Line</h3>
+            <p class="gallery-item-category">Factory</p>
+          </div>
+        </div>
+
+        <!-- Item 3: Liquid bottle bottling -->
+        <div class="gallery-item glass" data-category="machinery">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop" alt="Bottling Automation Machine">
+          <div class="gallery-overlay">
+            <h3 class="gallery-item-title">Liquid Detergent Filling</h3>
+            <p class="gallery-item-category">Machinery</p>
+          </div>
+        </div>
+
+        <!-- Item 4: Team gathering -->
+        <div class="gallery-item glass" data-category="events">
+          <img src="https://images.unsplash.com/photo-1540317585384-e588117a4b84?q=80&w=1470&auto=format&fit=crop" alt="Distributor Summit Event">
+          <div class="gallery-overlay">
+            <h3 class="gallery-item-title">Distributor Annual Meet 2026</h3>
+            <p class="gallery-item-category">Events</p>
+          </div>
+        </div>
+
+        <!-- Item 5: Fabric conditioner bottle -->
+        <div class="gallery-item glass" data-category="products">
+          <img src="public/images/fabric_conditioner.png" alt="Fabric Conditioner Lavender Bottling">
+          <div class="gallery-overlay">
+            <h3 class="gallery-item-title">501 Fabric Softeners</h3>
+            <p class="gallery-item-category">Products</p>
+          </div>
+        </div>
+
+        <!-- Item 6: Warehouse -->
+        <div class="gallery-item glass" data-category="factory">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1470&auto=format&fit=crop" alt="Main Warehouse Racks">
+          <div class="gallery-overlay">
+            <h3 class="gallery-item-title">Stock Dispatch Warehouse</h3>
+            <p class="gallery-item-category">Factory</p>
+          </div>
+        </div>
+
+        <!-- Item 7: Laboratory -->
+        <div class="gallery-item glass" data-category="machinery">
+          <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1470&auto=format&fit=crop" alt="Safety Testing Laboratory">
+          <div class="gallery-overlay">
+            <h3 class="gallery-item-title">Dermal Safety Lab</h3>
+            <p class="gallery-item-category">Machinery</p>
+          </div>
+        </div>
+
+        <!-- Item 8: Team Building -->
+        <div class="gallery-item glass" data-category="events">
+          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1470&auto=format&fit=crop" alt="Corporate Social Event">
+          <div class="gallery-overlay">
+            <h3 class="gallery-item-title">Green Plant Clean Drive</h3>
+            <p class="gallery-item-category">Events</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX CONTAINER -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img">
+      <div class="lightbox-caption">Caption details</div>
+    </div>
+  </div>
+
+  <!-- Catalog Download Banner -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
+    <div class="container">
+      <div class="catalog-download-banner reveal">
+        <div class="catalog-text">
+          <h3>Want to see more?</h3>
+          <p>Download our product catalogue to explore all varieties.</p>
+        </div>
+        <a href="#" class="catalog-btn" onclick="alert('Downloading Monagodu 501 Catalogue...'); return false;"><i class="fas fa-download"></i> Download Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-container">
+            <img src="public/images/logo.png" alt="Monagodu 501 Logo" class="logo-image">
+          </a>
+          <p class="footer-desc">We are committed to provide high quality cleaning products for a better and healthier life.</p>
+          <a href="https://wa.me/919876543210" target="_blank" class="footer-whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> +91 98765 43210
+          </a>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-menu">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="products.html" class="footer-link">Products</a></li>
+            <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Products</h4>
+          <ul class="footer-menu">
+            <li><a href="products.html" class="footer-link">Detergent Powder</a></li>
+            <li><a href="products.html" class="footer-link">Detergent Cake</a></li>
+            <li><a href="products.html" class="footer-link">Liquid Detergent</a></li>
+            <li><a href="products.html" class="footer-link">Fabric Conditioner</a></li>
+            <li><a href="products.html" class="footer-link">Floor Cleaner</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-menu">
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+            <li><a href="#" class="footer-link">Return Policy</a></li>
+            <li><a href="#" class="footer-link">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Follow Us</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-item"><i class="fas fa-phone-alt"></i> +91 98765 43210</div>
+            <div class="footer-contact-item"><i class="fas fa-envelope"></i> info@monagodu501.com</div>
+          </div>
+          <div class="footer-social-links">
+            <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Monagodu 501. All Rights Reserved.</p>
+        <p>Designed with <i class="fas fa-heart" style="color: #ef4444;"></i> for a cleaner tomorrow.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WIDGETS -->
+  <div class="floating-actions">
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-widget">
+      <div id="whatsapp-badge" class="whatsapp-badge"></div>
+      <button id="whatsapp-btn" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </button>
+      
+      <!-- Chat Box Mockup -->
+      <div id="whatsapp-chatbox" class="whatsapp-chatbox glass">
+        <div class="chatbox-header">
+          <div class="chatbox-avatar">501</div>
+          <div class="chatbox-meta">
+            <h4>Monagodu 501</h4>
+            <p>Typically replies in minutes</p>
+          </div>
+        </div>
+        <div id="whatsapp-body" class="chatbox-body">
+          <div class="chat-msg chat-msg-received">
+            Hello! How can we help you clean brighter today? Ask us about our products or dealership enquiries.
+          </div>
+        </div>
+        <div class="chatbox-footer">
+          <input type="text" id="whatsapp-input" placeholder="Type a message..." class="chatbox-input" aria-label="Message input">
+          <button id="whatsapp-send" class="chatbox-send-btn" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
