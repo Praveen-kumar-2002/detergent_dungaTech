@@ -10,18 +10,78 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductModals();
   initGalleryFilter();
   initProductFilter();
+  initHeroBubbles();
+  initSparkles();
 });
 
-/* --- PAGE LOADER --- */
+/* --- PAGE LOADER & TRANSITION --- */
 function initLoader() {
   const loader = document.getElementById('page-loader');
-  if (loader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        loader.classList.add('hidden');
-      }, 500); // smooth short delay
-    });
+  if (!loader) return;
+
+  // 1. Inject detergent wave bubble markup dynamically
+  loader.innerHTML = `
+    <div class="detergent-loader-wrapper">
+      <div class="detergent-bubble-sphere">
+        <div class="water-wave-layer"></div>
+        <div class="water-wave-overlay"></div>
+        <div class="inner-bubbles">
+          <span class="micro-bubble"></span>
+          <span class="micro-bubble"></span>
+          <span class="micro-bubble"></span>
+          <span class="micro-bubble"></span>
+        </div>
+      </div>
+      <div class="loader-text">Preparing Freshness...</div>
+    </div>
+  `;
+
+  // 2. Spawn ambient floating soap bubbles in background
+  for (let i = 0; i < 12; i++) {
+    const bubble = document.createElement('div');
+    bubble.className = 'loader-ambient-bubble';
+    const size = Math.random() * 24 + 10;
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.left = `${Math.random() * 100}%`;
+    bubble.style.animationDuration = `${Math.random() * 5 + 4}s`; // 4s to 9s
+    bubble.style.animationDelay = `${Math.random() * 3}s`;
+    loader.appendChild(bubble);
   }
+
+  // 3. Fade out loader smoothly after window loads
+  const hideLoader = () => {
+    setTimeout(() => {
+      loader.classList.add('hidden');
+    }, 500);
+  };
+
+  if (document.readyState === 'complete') {
+    hideLoader();
+  } else {
+    window.addEventListener('load', hideLoader);
+  }
+
+  // 4. Intercept link navigation to show transition loader
+  const localLinks = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"]):not([href^="javascript:"])');
+  localLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && (href.endsWith('.html') || !href.includes(':'))) {
+      link.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        
+        e.preventDefault();
+        
+        // Show loader (fade in)
+        loader.classList.remove('hidden');
+        document.body.classList.add('page-fade-out');
+        
+        setTimeout(() => {
+          window.location.href = href;
+        }, 600);
+      });
+    }
+  });
 }
 
 /* --- NAVBAR SCROLL & MOBILE BURGER --- */
@@ -478,17 +538,287 @@ function initProductFilter() {
   }
 }
 
-// Category Slider Scroll Buttons
+// Category Slider Initialization
 document.addEventListener('DOMContentLoaded', () => {
+  initCategoriesSlider();
+});
+
+/* --- HERO FLOATING SOAP BUBBLES --- */
+function initHeroBubbles() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  const bubbleContainer = document.createElement('div');
+  bubbleContainer.className = 'hero-bubbles';
+  bubbleContainer.style.position = 'absolute';
+  bubbleContainer.style.top = '0';
+  bubbleContainer.style.left = '0';
+  bubbleContainer.style.width = '100%';
+  bubbleContainer.style.height = '100%';
+  bubbleContainer.style.overflow = 'hidden';
+  bubbleContainer.style.pointerEvents = 'none';
+  bubbleContainer.style.zIndex = '1';
+  hero.appendChild(bubbleContainer);
+
+  const createBubble = () => {
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble';
+    
+    const size = Math.random() * 35 + 15; // 15px to 50px
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.left = `${Math.random() * 100}%`;
+    bubble.style.bottom = `-50px`;
+    
+    const duration = Math.random() * 8 + 6; // 6s to 14s
+    bubble.style.animationDuration = `${duration}s`;
+    bubble.style.opacity = Math.random() * 0.45 + 0.15;
+    
+    // Add pop effect on hover
+    bubble.addEventListener('mouseenter', () => {
+      bubble.style.transform = 'scale(1.4)';
+      bubble.style.opacity = '0';
+      setTimeout(() => bubble.remove(), 100);
+    });
+    
+    bubbleContainer.appendChild(bubble);
+    
+    setTimeout(() => {
+      bubble.remove();
+    }, duration * 1000);
+  };
+
+  // Spawn bubbles periodically
+  setInterval(createBubble, 700);
+  
+  // Initial batch
+  for (let i = 0; i < 8; i++) {
+    setTimeout(createBubble, Math.random() * 4000);
+  }
+}
+
+/* --- HERO TEXT SPARKLES --- */
+function initSparkles() {
+  const container = document.querySelector('.hero-title');
+  if (!container) return;
+
+  const createSparkle = () => {
+    const sparkle = document.createElement('i');
+    sparkle.className = 'fas fa-star sparkle-icon';
+    
+    // Random position relative to title container
+    const x = Math.random() * container.offsetWidth;
+    const y = Math.random() * container.offsetHeight;
+    
+    sparkle.style.left = `${x}px`;
+    sparkle.style.top = `${y}px`;
+    
+    // Randomize scale
+    const scale = Math.random() * 0.5 + 0.7;
+    sparkle.style.transform = `scale(${scale})`;
+    
+    // Sparkle colors matching brand palette
+    const colors = ['#fbbf24', '#38bdf8', '#ffffff', '#c084fc', '#6ee7b7'];
+    sparkle.style.color = colors[Math.floor(Math.random() * colors.length)];
+    
+    container.appendChild(sparkle);
+    
+    setTimeout(() => {
+      sparkle.remove();
+    }, 1500);
+  };
+
+  // Twinkle every 400ms
+  setInterval(createSparkle, 400);
+}
+
+/* --- PRODUCT CATEGORIES INFINITE CAROUSEL SLIDER --- */
+function initCategoriesSlider() {
   const track = document.querySelector('.categories-track');
+  const wrapper = document.querySelector('.categories-wrapper');
   const prevBtn = document.getElementById('cat-prev-btn');
   const nextBtn = document.getElementById('cat-next-btn');
-  if (track && prevBtn && nextBtn) {
-    prevBtn.addEventListener('click', () => {
-      track.scrollBy({ left: -320, behavior: 'smooth' });
-    });
+
+  if (!track || !wrapper) return;
+
+  const originalCards = Array.from(track.children);
+  if (originalCards.length === 0) return;
+
+  // Clone slides to create infinite loop
+  // Clone entire list to append at end
+  originalCards.forEach(card => {
+    const clone = card.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  // Clone entire list to prepend at start
+  originalCards.slice().reverse().forEach(card => {
+    const clone = card.cloneNode(true);
+    track.insertBefore(clone, track.firstChild);
+  });
+
+  const numOriginal = originalCards.length;
+  let currentIndex = numOriginal; // starts at first original card
+  let isTransitioning = false;
+  let autoplayTimer = null;
+  let isDragging = false;
+  let dragStartX = 0;
+  let touchStartX = 0;
+  let initialTranslateX = 0;
+
+  function updatePosition(transition = true) {
+    if (transition) {
+      track.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    } else {
+      track.style.transition = 'none';
+    }
+
+    const cardWidth = originalCards[0].offsetWidth;
+    const gap = parseFloat(window.getComputedStyle(track).gap) || 32;
+    const step = cardWidth + gap;
+    const tx = -currentIndex * step;
+    track.style.transform = `translateX(${tx}px)`;
+  }
+
+  track.addEventListener('transitionend', () => {
+    isTransitioning = false;
+    // Snap back to middle if user reaches boundaries
+    if (currentIndex >= numOriginal * 2) {
+      currentIndex = numOriginal;
+      updatePosition(false);
+    }
+    if (currentIndex < numOriginal) {
+      currentIndex = numOriginal * 2 - (numOriginal - currentIndex);
+      updatePosition(false);
+    }
+  });
+
+  function moveNext() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex++;
+    updatePosition();
+  }
+
+  function movePrev() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex--;
+    updatePosition();
+  }
+
+  if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-      track.scrollBy({ left: 320, behavior: 'smooth' });
+      stopAutoplay();
+      moveNext();
+      startAutoplay();
     });
   }
-});
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      stopAutoplay();
+      movePrev();
+      startAutoplay();
+    });
+  }
+
+  // Autoplay functionality
+  function startAutoplay() {
+    autoplayTimer = setInterval(moveNext, 4000);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  // Hover Pause
+  wrapper.addEventListener('mouseenter', stopAutoplay);
+  wrapper.addEventListener('mouseleave', startAutoplay);
+
+  // Touch swipe support (Mobile)
+  wrapper.addEventListener('touchstart', (e) => {
+    stopAutoplay();
+    touchStartX = e.touches[0].clientX;
+    dragStartX = touchStartX;
+    isDragging = true;
+    const style = window.getComputedStyle(track);
+    const matrix = new DOMMatrix(style.transform);
+    initialTranslateX = matrix.m41;
+    track.style.transition = 'none';
+  }, { passive: true });
+
+  wrapper.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const deltaX = currentX - dragStartX;
+    track.style.transform = `translateX(${initialTranslateX + deltaX}px)`;
+  }, { passive: true });
+
+  wrapper.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    const threshold = 55;
+
+    if (diff > threshold) {
+      moveNext();
+    } else if (diff < -threshold) {
+      movePrev();
+    } else {
+      updatePosition();
+    }
+    startAutoplay();
+  }, { passive: true });
+
+  // Mouse drag support (Desktop)
+  wrapper.addEventListener('mousedown', (e) => {
+    if (e.target.closest('.nav-arrow')) return;
+    e.preventDefault();
+    stopAutoplay();
+    isDragging = true;
+    dragStartX = e.clientX;
+    touchStartX = dragStartX;
+    const style = window.getComputedStyle(track);
+    const matrix = new DOMMatrix(style.transform);
+    initialTranslateX = matrix.m41;
+    track.style.transition = 'none';
+    wrapper.style.cursor = 'grabbing';
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - dragStartX;
+    track.style.transform = `translateX(${initialTranslateX + deltaX}px)`;
+  });
+
+  window.addEventListener('mouseup', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    wrapper.style.cursor = 'default';
+    const diff = touchStartX - e.clientX;
+    const threshold = 55;
+
+    if (diff > threshold) {
+      moveNext();
+    } else if (diff < -threshold) {
+      movePrev();
+    } else {
+      updatePosition();
+    }
+    startAutoplay();
+  });
+
+  // Handle resizing dynamically
+  window.addEventListener('resize', () => {
+    updatePosition(false);
+  });
+
+  // Initial update
+  setTimeout(() => updatePosition(false), 150);
+  startAutoplay();
+}

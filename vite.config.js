@@ -10,6 +10,7 @@ export default defineConfig({
         products: resolve(__dirname, 'products.html'),
         gallery: resolve(__dirname, 'gallery.html'),
         contact: resolve(__dirname, 'contact.html'),
+        dealership: resolve(__dirname, 'dealership.html'),
         custom404: resolve(__dirname, '404.html'),
       }
     }

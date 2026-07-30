@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply for Dealership - Monagodu 501</title>
+  <meta name="description" content="Apply for Monagodu 501 dealership. Fill out our business partnership application form and partner with us.">
+  <link rel="stylesheet" href="/style.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .dealership-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .form-section-title {
+      grid-column: 1 / -1;
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .form-section-title i {
+      font-size: 1.1rem;
+    }
+    .file-input-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      transition: all var(--transition-fast);
+      position: relative;
+    }
+    .file-input-wrapper:hover {
+      border-color: var(--color-primary);
+      background: var(--color-glow);
+    }
+    .file-input-label {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    .file-input-label i {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+    }
+    .real-file-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .file-name-display {
+      font-size: 0.8rem;
+      color: var(--color-success);
+      font-weight: 600;
+      text-align: center;
+      margin-top: 0.25rem;
+      word-break: break-all;
+    }
+    .form-btn-group {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .btn-reset {
+      background: transparent;
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+    }
+    .btn-reset:hover {
+      background: rgba(0, 0, 0, 0.05);
+      border-color: var(--color-text-light);
+    }
+    .validation-error {
+      font-size: 0.75rem;
+      color: #ef4444;
+      margin-top: 0.25rem;
+      display: none;
+    }
+    .form-input.invalid {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+    }
+    .form-input.valid {
+      border-color: var(--color-success);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" class="page-loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Monagodu 501</div>
+  </div>
+
+  <!-- CURSOR GLOW -->
+  <div id="cursor-glow" class="cursor-glow"></div>
+
+  <!-- STICKY NAVBAR -->
+  <nav id="navbar" class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo-container">
+        <img src="public/images/logo.png" alt="Monagodu 501 Logo" class="logo-image">
+      </a>
+      
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+        <li><a href="public/catalogue.pdf" download class="btn-catalogue"><i class="fas fa-download"></i> Download Catalogue</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Light/Dark Toggle -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+          <svg class="moon-icon" viewBox="0 0 24 24"><path d="M12.3 22h-.1c-5.5 0-10-4.5-10-10 0-4.8 3.5-8.9 8.2-9.7.5-.1 1 .2 1.2.7.2.5 0 1.1-.4 1.4-2.8 2-3.8 5.8-2.3 8.9 1.5 3.1 4.7 4.9 8 4.9 1.4 0 2.8-.4 4-1.2.4-.3.9-.2 1.3.1.4.3.5.8.4 1.3-.9 4.7-5 8-9.8 8.2v.4zm-1.8-17.7c-3.4.9-5.8 4-5.8 7.6 0 4.4 3.6 8 8 8 3 0 5.6-1.7 6.9-4.3-.9.3-1.8.4-2.8.4-4.5 0-8.3-3.2-9-7.7h2.7z"/></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.01c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+        </button>
+
+        <!-- WhatsApp Button in Header -->
+        <a href="https://wa.me/919876543210" target="_blank" class="nav-whatsapp-btn hide-mobile">
+          <i class="fab fa-whatsapp"></i> +91 98765 43210
+        </a>
+      </div>
+
+      <div id="burger" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- INNER HEADER -->
+  <header class="inner-header">
+    <div class="container">
+      <h1 class="inner-title">Apply for Dealership</h1>
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Apply for Dealership</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- FORM SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="dealership-container">
+        <div class="contact-form-wrapper glass reveal">
+          <h3 class="form-title" style="text-align: center; margin-bottom: 1rem;"><i class="fas fa-handshake" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Dealership Application Form</h3>
+          <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">Please fill out the form below to apply for Monagodu 501 dealership. All starred fields are required.</p>
+          
+          <form id="dealershipForm" class="form-grid" novalidate>
+            
+            <!-- Section 1: Contact Details -->
+            <div class="form-section-title">
+              <i class="fas fa-user-tie"></i> Contact Details
+            </div>
+            
+            <div class="form-group form-group-full">
+              <label for="dealerName" class="form-label">Dealer Name *</label>
+              <input type="text" id="dealerName" name="dealerName" placeholder="Enter full name of applicant" class="form-input" required>
+              <span id="dealerName_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="mobile" class="form-label">Mobile Number *</label>
+              <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number" class="form-input" required>
+              <span id="mobile_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="altMobile" class="form-label">Alternate Number</label>
+              <input type="tel" id="altMobile" name="altMobile" placeholder="Alternative 10-digit mobile number" class="form-input">
+              <span id="altMobile_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="email" class="form-label">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="example@business.com" class="form-input" required>
+              <span id="email_error" class="validation-error"></span>
+            </div>
+
+            <!-- Section 2: Business details -->
+            <div class="form-section-title">
+              <i class="fas fa-briefcase"></i> Business Details
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="businessName" class="form-label">Business Name *</label>
+              <input type="text" id="businessName" name="businessName" placeholder="Enter registered business/firm name" class="form-input" required>
+              <span id="businessName_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="gstNumber" class="form-label">GST Number *</label>
+              <input type="text" id="gstNumber" name="gstNumber" placeholder="15-character GSTIN" class="form-input" required style="text-transform: uppercase;">
+              <span id="gstNumber_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="panNumber" class="form-label">PAN Number *</label>
+              <input type="text" id="panNumber" name="panNumber" placeholder="10-character PAN" class="form-input" required style="text-transform: uppercase;">
+              <span id="panNumber_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="aadhaarNumber" class="form-label">Aadhaar Number *</label>
+              <input type="text" id="aadhaarNumber" name="aadhaarNumber" placeholder="12-digit Aadhaar card number" class="form-input" required>
+              <span id="aadhaarNumber_error" class="validation-error"></span>
+            </div>
+
+            <!-- Section 3: Location Details -->
+            <div class="form-section-title">
+              <i class="fas fa-map-marked-alt"></i> Location Details
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="businessAddress" class="form-label">Business Address *</label>
+              <input type="text" id="businessAddress" name="businessAddress" placeholder="Shop/Office address, street name, locality" class="form-input" required>
+              <span id="businessAddress_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="state" class="form-label">State *</label>
+              <select id="state" name="state" class="form-input" required>
+                <option value="">Select State</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="West Bengal">West Bengal</option>
+              </select>
+              <span id="state_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="district" class="form-label">District *</label>
+              <input type="text" id="district" name="district" placeholder="Enter District" class="form-input" required>
+              <span id="district_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="city" class="form-label">City *</label>
+              <input type="text" id="city" name="city" placeholder="Enter City/Town" class="form-input" required>
+              <span id="city_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="pincode" class="form-label">Pincode *</label>
+              <input type="text" id="pincode" name="pincode" placeholder="6-digit Pincode" class="form-input" required>
+              <span id="pincode_error" class="validation-error"></span>
+            </div>
+
+            <!-- Section 4: Capabilities & Infrastructure -->
+            <div class="form-section-title">
+              <i class="fas fa-warehouse"></i> Experience & Infrastructure
+            </div>
+
+            <div class="form-group">
+              <label for="experience" class="form-label">Years of Experience *</label>
+              <input type="number" id="experience" name="experience" min="0" placeholder="Years in distribution/retail" class="form-input" required>
+              <span id="experience_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="businessType" class="form-label">Current Business Type *</label>
+              <select id="businessType" name="businessType" class="form-input" required>
+                <option value="">Select Business Type</option>
+                <option value="Distributorship">Distributorship</option>
+                <option value="Wholesale">Wholesale</option>
+                <option value="Retailer">Retailer</option>
+                <option value="Super Stockist">Super Stockist</option>
+                <option value="New Business">New Entrepreneur</option>
+                <option value="Others">Others</option>
+              </select>
+              <span id="businessType_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="investment" class="form-label">Investment Capacity *</label>
+              <select id="investment" name="investment" class="form-input" required>
+                <option value="">Select Investment Capacity</option>
+                <option value="2-5 Lakhs">₹2 Lakhs - ₹5 Lakhs</option>
+                <option value="5-10 Lakhs">₹5 Lakhs - ₹10 Lakhs</option>
+                <option value="10-20 Lakhs">₹10 Lakhs - ₹20 Lakhs</option>
+                <option value="20-50 Lakhs">₹20 Lakhs - ₹50 Lakhs</option>
+                <option value="50 Lakhs+">₹50 Lakhs+</option>
+              </select>
+              <span id="investment_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="expectedSales" class="form-label">Expected Monthly Sales *</label>
+              <select id="expectedSales" name="expectedSales" class="form-input" required>
+                <option value="">Select Expected Sales</option>
+                <option value="Under 1 Lakh">Under ₹1 Lakh</option>
+                <option value="1-3 Lakhs">₹1 Lakh - ₹3 Lakhs</option>
+                <option value="3-5 Lakhs">₹3 Lakhs - ₹5 Lakhs</option>
+                <option value="5-10 Lakhs">₹5 Lakhs - ₹10 Lakhs</option>
+                <option value="10 Lakhs+">₹10 Lakhs+</option>
+              </select>
+              <span id="expectedSales_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="warehouse" class="form-label">Warehouse Available? *</label>
+              <select id="warehouse" name="warehouse" class="form-input" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <span id="warehouse_error" class="validation-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="vehicle" class="form-label">Delivery Vehicle Available? *</label>
+              <select id="vehicle" name="vehicle" class="form-input" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+              <span id="vehicle_error" class="validation-error"></span>
+            </div>
+
+            <!-- Section 5: Documents upload -->
+            <div class="form-section-title">
+              <i class="fas fa-file-upload"></i> Required Documents (Max 5MB each)
+            </div>
+
+            <div class="form-group">
+              <span class="form-label">PAN Card *</span>
+              <div class="file-input-wrapper">
+                <div class="file-input-label">
+                  <i class="fas fa-address-card"></i>
+                  <span>Click to upload PAN Card PDF/Image</span>
+                </div>
+                <input type="file" id="docPan" name="docPan" accept="application/pdf,image/*" class="real-file-input" required>
+                <div id="docPan_name" class="file-name-display"></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <span class="form-label">GST Certificate *</span>
+              <div class="file-input-wrapper">
+                <div class="file-input-label">
+                  <i class="fas fa-file-invoice-dollar"></i>
+                  <span>Click to upload GST Certificate PDF/Image</span>
+                </div>
+                <input type="file" id="docGst" name="docGst" accept="application/pdf,image/*" class="real-file-input" required>
+                <div id="docGst_name" class="file-name-display"></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <span class="form-label">Aadhaar Card *</span>
+              <div class="file-input-wrapper">
+                <div class="file-input-label">
+                  <i class="fas fa-id-card"></i>
+                  <span>Click to upload Aadhaar PDF/Image</span>
+                </div>
+                <input type="file" id="docAadhaar" name="docAadhaar" accept="application/pdf,image/*" class="real-file-input" required>
+                <div id="docAadhaar_name" class="file-name-display"></div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <span class="form-label">Business Proof *</span>
+              <div class="file-input-wrapper">
+                <div class="file-input-label">
+                  <i class="fas fa-store"></i>
+                  <span>Click to upload Shop Licence/Business Proof</span>
+                </div>
+                <input type="file" id="docBusiness" name="docBusiness" accept="application/pdf,image/*" class="real-file-input" required>
+                <div id="docBusiness_name" class="file-name-display"></div>
+              </div>
+            </div>
+
+            <!-- Section 6: Remarks -->
+            <div class="form-section-title">
+              <i class="fas fa-comment-dots"></i> Additional Information
+            </div>
+
+            <div class="form-group form-group-full">
+              <label for="message" class="form-label">Message / Remarks</label>
+              <textarea id="message" name="message" placeholder="Provide any additional comments or business references..." class="form-input form-input-textarea"></textarea>
+              <span id="message_error" class="validation-error"></span>
+            </div>
+
+            <!-- Section 7: Action Buttons -->
+            <div class="form-btn-group">
+              <button type="submit" class="btn btn-primary form-submit-btn" style="flex: 1;">Submit Application <i class="fas fa-paper-plane"></i></button>
+              <button type="reset" class="btn btn-secondary btn-reset form-submit-btn" style="flex: 1;">Reset Form <i class="fas fa-undo"></i></button>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-container">
+            <img src="public/images/logo.png" alt="Monagodu 501 Logo" class="logo-image">
+          </a>
+          <p class="footer-desc">We are committed to provide high quality cleaning products for a better and healthier life.</p>
+          <a href="https://wa.me/919876543210" target="_blank" class="footer-whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> +91 98765 43210
+          </a>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-menu">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="products.html" class="footer-link">Products</a></li>
+            <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Products</h4>
+          <ul class="footer-menu">
+            <li><a href="products.html" class="footer-link">Detergent Powder</a></li>
+            <li><a href="products.html" class="footer-link">Detergent Cake</a></li>
+            <li><a href="products.html" class="footer-link">Liquid Detergent</a></li>
+            <li><a href="products.html" class="footer-link">Fabric Conditioner</a></li>
+            <li><a href="products.html" class="footer-link">Floor Cleaner</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Support</h4>
+          <ul class="footer-menu">
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+            <li><a href="#" class="footer-link">Return Policy</a></li>
+            <li><a href="#" class="footer-link">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Follow Us</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-item"><i class="fas fa-phone-alt"></i> +91 98765 43210</div>
+            <div class="footer-contact-item"><i class="fas fa-envelope"></i> info@monagodu501.com</div>
+          </div>
+          <div class="footer-social-links">
+            <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Monagodu 501. All Rights Reserved.</p>
+        <p>Designed with <i class="fas fa-heart" style="color: #ef4444;"></i> for a cleaner tomorrow.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WIDGETS -->
+  <div class="floating-actions">
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- WhatsApp Chat Widget -->
+    <div class="whatsapp-widget">
+      <div id="whatsapp-badge" class="whatsapp-badge"></div>
+      <button id="whatsapp-btn" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </button>
+      
+      <!-- Chat Box Mockup -->
+      <div id="whatsapp-chatbox" class="whatsapp-chatbox glass">
+        <div class="chatbox-header">
+          <div class="chatbox-avatar">501</div>
+          <div class="chatbox-meta">
+            <h4>Monagodu 501</h4>
+            <p>Typically replies in minutes</p>
+          </div>
+        </div>
+        <div id="whatsapp-body" class="chatbox-body">
+          <div class="chat-msg chat-msg-received">
+            Hello! How can we help you clean brighter today? Ask us about our products or dealership enquiries.
+          </div>
+        </div>
+        <div class="chatbox-footer">
+          <input type="text" id="whatsapp-input" placeholder="Type a message..." class="chatbox-input" aria-label="Message input">
+          <button id="whatsapp-send" class="chatbox-send-btn" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+  
+  <!-- Interactive Form Validation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('dealershipForm');
+      const inputs = form.querySelectorAll('.form-input:not([type="file"])');
+      
+      // Live validation check on blur/input
+      inputs.forEach(input => {
+        input.addEventListener('input', () => validateField(input));
+        input.addEventListener('blur', () => validateField(input));
+      });
+
+      // Handle file input file name displays
+      const fileInputs = form.querySelectorAll('.real-file-input');
+      fileInputs.forEach(fileInput => {
+        fileInput.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          const display = document.getElementById(fileInput.id + '_name');
+          if (file) {
+            if (file.size > 5 * 1024 * 1024) {
+              alert('File size exceeds 5MB limit.');
+              fileInput.value = '';
+              if (display) display.textContent = '';
+              return;
+            }
+            if (display) {
+              display.textContent = 'Selected: ' + file.name;
+            }
+          } else {
+            if (display) display.textContent = '';
+          }
+        });
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        let isFormValid = true;
+        inputs.forEach(input => {
+          if (!validateField(input)) {
+            isFormValid = false;
+          }
+        });
+
+        // Check files
+        fileInputs.forEach(fileInput => {
+          if (fileInput.hasAttribute('required') && !fileInput.files.length) {
+            isFormValid = false;
+            alert(`Please upload the required document: ${fileInput.name || fileInput.id}`);
+          }
+        });
+
+        if (isFormValid) {
+          alert('Thank you! Your dealership application has been submitted successfully. Our business development team will review your details and documents and get back to you within 2-3 business days.');
+          form.reset();
+          fileInputs.forEach(fileInput => {
+            const display = document.getElementById(fileInput.id + '_name');
+            if (display) display.textContent = '';
+          });
+          form.querySelectorAll('.form-input').forEach(el => {
+            el.classList.remove('valid', 'invalid');
+          });
+        } else {
+          alert('Please fill all required fields correctly before submitting.');
+        }
+      });
+
+      form.addEventListener('reset', () => {
+        setTimeout(() => {
+          inputs.forEach(input => {
+            input.classList.remove('valid', 'invalid');
+            const errorSpan = document.getElementById(input.id + '_error');
+            if (errorSpan) errorSpan.style.display = 'none';
+          });
+          fileInputs.forEach(fileInput => {
+            const display = document.getElementById(fileInput.id + '_name');
+            if (display) display.textContent = '';
+          });
+        }, 50);
+      });
+
+      function validateField(input) {
+        const value = input.value.trim();
+        let isValid = true;
+        let errorMsg = '';
+
+        if (input.hasAttribute('required') && !value) {
+          isValid = false;
+          errorMsg = 'This field is required.';
+        } else if (value) {
+          if (input.type === 'email') {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+              isValid = false;
+              errorMsg = 'Please enter a valid email address.';
+            }
+          } else if (input.id === 'mobile' || input.id === 'altMobile') {
+            const phoneRegex = /^[6-9]\d{9}$/;
+            if (!phoneRegex.test(value)) {
+              isValid = false;
+              errorMsg = 'Please enter a valid 10-digit mobile number starting with 6-9.';
+            }
+          } else if (input.id === 'pincode') {
+            const pinRegex = /^\d{6}$/;
+            if (!pinRegex.test(value)) {
+              isValid = false;
+              errorMsg = 'Please enter a valid 6-digit Indian pincode.';
+            }
+          } else if (input.id === 'gstNumber') {
+            const gstRegex = /^\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Zz]{1}[A-Z\d]{1}$/;
+            if (!gstRegex.test(value.toUpperCase())) {
+              isValid = false;
+              errorMsg = 'Please enter a valid 15-character GSTIN format (e.g., 36AAAAA1111A1Z1).';
+            }
+          } else if (input.id === 'panNumber') {
+            const panRegex = /^[A-Z]{5}\d{4}[A-Z]{1}$/;
+            if (!panRegex.test(value.toUpperCase())) {
+              isValid = false;
+              errorMsg = 'Please enter a valid 10-character PAN format (e.g., ABCDE1234F).';
+            }
+          } else if (input.id === 'aadhaarNumber') {
+            const aadhaarRegex = /^\d{12}$/;
+            if (!aadhaarRegex.test(value)) {
+              isValid = false;
+              errorMsg = 'Please enter a valid 12-digit Aadhaar number.';
+            }
+          } else if (input.id === 'experience') {
+            const exp = parseInt(value, 10);
+            if (isNaN(exp) || exp < 0) {
+              isValid = false;
+              errorMsg = 'Years of experience cannot be negative.';
+            }
+          }
+        }
+
+        const errorSpan = document.getElementById(input.id + '_error');
+        if (!isValid) {
+          input.classList.add('invalid');
+          input.classList.remove('valid');
+          if (errorSpan) {
+            errorSpan.textContent = errorMsg;
+            errorSpan.style.display = 'block';
+          }
+        } else {
+          if (value) {
+            input.classList.add('valid');
+          } else {
+            input.classList.remove('valid');
+          }
+          input.classList.remove('invalid');
+          if (errorSpan) {
+            errorSpan.style.display = 'none';
+          }
+        }
+
+        return isValid;
+      }
+    });
+  </script>
+</body>
+</html>

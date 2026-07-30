@@ -1,0 +1,29 @@
+- `[x]` Create mock assets (PDF and customer photos)
+  - `[x]` Generate 3 customer avatar photos using `generate_image` and save them
+  - `[x]` Create mock `catalogue.pdf` in the `public` folder
+- `[x]` Modify Header Navigation
+  - `[x]` Add "Download Catalogue" button to `index.html`
+  - `[x]` Add "Download Catalogue" button to `about.html`
+  - `[x]` Add "Download Catalogue" button to `products.html`
+  - `[x]` Add "Download Catalogue" button to `gallery.html`
+  - `[x]` Add "Download Catalogue" button to `contact.html`
+  - `[x]` Add "Download Catalogue" button to `404.html`
+  - `[x]` Update `style.css` for spacing and button styling
+- `[x]` Implement Hero Section animations
+  - `[x]` Write bubble and sparkle CSS in `style.css`
+  - `[x]` Implement bubble and sparkle logic in `main.js`
+- `[x]` Modify Benefits Bar
+  - `[x]` Update icon for "Shiny Floors" in `index.html`
+  - `[x]` Update CSS in `style.css` to prevent wrapping and handle responsive scroll
+- `[x]` Modify Product Categories Title
+  - `[x]` Replace petrol pump icon with water drop droplet icon in `style.css`
+- `[x]` Add Customer Reviews to Features Section
+  - `[x]` Insert 3 customer reviews in `index.html`
+  - `[x]` Update `.badges-grid` CSS in `style.css` to display a single continuous row on desktop
+- `[x]` Create Dealership Application Page
+  - `[x]` Update button path in `products.html`
+  - `[x]` Create `dealership.html` with fields, styles, validation
+  - `[x]` Register `dealership.html` in `vite.config.js`
+- `[x]` Verify changes and compile
+  - `[x]` Run build using `npm run build`
+  - `[x]` Ensure all visual styles and validations are correct
