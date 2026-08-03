@@ -19,41 +19,28 @@ function initLoader() {
   const loader = document.getElementById('page-loader');
   if (!loader) return;
 
-  // 1. Inject detergent wave bubble markup dynamically
+  // 1. Inject the premium splash screen markup
   loader.innerHTML = `
-    <div class="detergent-loader-wrapper">
-      <div class="detergent-bubble-sphere">
-        <div class="water-wave-layer"></div>
-        <div class="water-wave-overlay"></div>
-        <div class="inner-bubbles">
-          <span class="micro-bubble"></span>
-          <span class="micro-bubble"></span>
-          <span class="micro-bubble"></span>
-          <span class="micro-bubble"></span>
-        </div>
-      </div>
-      <div class="loader-text">Preparing Freshness...</div>
+    <div class="splash-content">
+      <!-- Glow Ring Backdrop -->
+      <div class="splash-glow-ring"></div>
+      
+      <!-- Sparkle Particles -->
+      <div class="splash-sparkle sparkle-1">✦</div>
+      <div class="splash-sparkle sparkle-2">✦</div>
+      <div class="splash-sparkle sparkle-3">✦</div>
+      <div class="splash-sparkle sparkle-4">✦</div>
+      
+      <!-- Product Image -->
+      <img src="public/images/splash_logo.jpg" alt="Monagodu 501" class="splash-product-img">
     </div>
   `;
 
-  // 2. Spawn ambient floating soap bubbles in background
-  for (let i = 0; i < 12; i++) {
-    const bubble = document.createElement('div');
-    bubble.className = 'loader-ambient-bubble';
-    const size = Math.random() * 24 + 10;
-    bubble.style.width = `${size}px`;
-    bubble.style.height = `${size}px`;
-    bubble.style.left = `${Math.random() * 100}%`;
-    bubble.style.animationDuration = `${Math.random() * 5 + 4}s`; // 4s to 9s
-    bubble.style.animationDelay = `${Math.random() * 3}s`;
-    loader.appendChild(bubble);
-  }
-
-  // 3. Fade out loader smoothly after window loads
+  // 2. Fade out loader smoothly after window loads
   const hideLoader = () => {
     setTimeout(() => {
       loader.classList.add('hidden');
-    }, 500);
+    }, 1200); // 1.2s delay to showcase the premium animations
   };
 
   if (document.readyState === 'complete') {
@@ -62,7 +49,7 @@ function initLoader() {
     window.addEventListener('load', hideLoader);
   }
 
-  // 4. Intercept link navigation to show transition loader
+  // 3. Intercept link navigation to show transition loader
   const localLinks = document.querySelectorAll('a[href]:not([target="_blank"]):not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"]):not([href^="javascript:"])');
   localLinks.forEach(link => {
     const href = link.getAttribute('href');
@@ -323,6 +310,14 @@ const productDatabase = {
     ingredients: 'Active Lemon Enzymes, Surfactant Blend, Aloe Vera Skin-Protection Extracts',
     sizes: ['250ml', '500ml', '1L'],
     img: 'public/images/dishwash_liquid.jpg'
+  },
+  'liquid-detergent': {
+    name: 'Monagodu 501 Liquid Detergent',
+    category: 'Liquid Detergent',
+    desc: 'Premium antibacterial liquid detergent formulated for a brightener wash. Highly effective at removing tough stains while remaining safe on colors, safe on hands, and leaving a refreshing fragrance.',
+    ingredients: 'Active Surfactants, Optical Brightening Agents, Fabric Softening Polymers, Antibacterial Enzymes, Premium Perfume',
+    sizes: ['1L'],
+    img: 'public/images/liquid_detergent.jpg'
   },
   'coffee-soap': {
     name: 'AVD Coffee Bath Soap',
