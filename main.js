@@ -32,7 +32,7 @@ function initLoader() {
       <div class="splash-sparkle sparkle-4">✦</div>
       
       <!-- Product Image -->
-      <img src="public/images/splash_logo.jpg" alt="Monagodu 501" class="splash-product-img">
+      <img src="images/splash_logo.jpg" alt="Monagodu 501" class="splash-product-img">
     </div>
   `;
 
@@ -309,7 +309,7 @@ const productDatabase = {
     desc: 'Super-concentrated degreasing dishwash formula powered by real lemon extracts. Neutralizes food odors instantly and leaves utensils sparkling clean with a single drop.',
     ingredients: 'Active Lemon Enzymes, Surfactant Blend, Aloe Vera Skin-Protection Extracts',
     sizes: ['250ml', '500ml', '1L'],
-    img: 'public/images/dishwash_liquid.jpg'
+    img: 'images/dishwash_liquid.jpg'
   },
   'liquid-detergent': {
     name: 'Monagodu 501 Liquid Detergent',
@@ -317,7 +317,7 @@ const productDatabase = {
     desc: 'Premium antibacterial liquid detergent formulated for a brightener wash. Highly effective at removing tough stains while remaining safe on colors, safe on hands, and leaving a refreshing fragrance.',
     ingredients: 'Active Surfactants, Optical Brightening Agents, Fabric Softening Polymers, Antibacterial Enzymes, Premium Perfume',
     sizes: ['1L'],
-    img: 'public/images/liquid_detergent.jpg'
+    img: 'images/liquid_detergent.jpg'
   },
   'coffee-soap': {
     name: 'AVD Coffee Bath Soap',
@@ -325,7 +325,7 @@ const productDatabase = {
     desc: 'Premium coffee bath soap best for gentle exfoliation and deeply cleansing the skin. Promotes smooth, glowing skin with a rich coffee aroma and natural extracts.',
     ingredients: 'Coffee Extracts, Natural Oils, Sodium Palmate, Glycerin, Coffee Grounds',
     sizes: ['100g'],
-    img: 'public/images/coffee_soap.jpg'
+    img: 'images/coffee_soap.jpg'
   },
   'lemon-soap': {
     name: 'AVD Lemon Bath Soap',
@@ -333,7 +333,7 @@ const productDatabase = {
     desc: 'Premium lemon bath soap designed for deep cleansing and oil control. Refreshes, purifies, and brightens skin with natural lemon extracts.',
     ingredients: 'Lemon Extracts, Essential Oils, Sodium Palmate, Glycerin, Brightening Agents',
     sizes: ['100g'],
-    img: 'public/images/lemon_soap.jpg'
+    img: 'images/lemon_soap.jpg'
   },
   'neem-soap': {
     name: 'AVD Neem Bath Soap',
@@ -341,7 +341,7 @@ const productDatabase = {
     desc: 'Premium neem bath soap formulated for skin infection problems. Fights bacteria, deep cleanses, and controls oil with natural neem extracts.',
     ingredients: 'Neem Extracts, Herbal Oil Blend, Sodium Palmate, Glycerin, Anti-bacterial Agents',
     sizes: ['100g'],
-    img: 'public/images/neem_soap.jpg'
+    img: 'images/neem_soap.jpg'
   },
   'multani-mitti-soap': {
     name: 'AVD Multani Mitti Bath Soap',
@@ -349,7 +349,7 @@ const productDatabase = {
     desc: 'Premium multani mitti bath soap best for oil control and deep cleansing. Absorbs excess oil, detoxifies, refreshes, and purifies the skin.',
     ingredients: 'Multani Mitti (Fuller\'s Earth), Natural Extract Blend, Sodium Palmate, Glycerin',
     sizes: ['100g'],
-    img: 'public/images/multani_mitti_soap.jpg'
+    img: 'images/multani_mitti_soap.jpg'
   },
   'milky-rice-soap': {
     name: 'AVD Milky Rice Bath Soap',
@@ -357,7 +357,7 @@ const productDatabase = {
     desc: 'Premium milky rice bath soap best for gentle skin brightening. Nourishes skin, moisturizes, and brightens skin tone with natural milk and rice extracts.',
     ingredients: 'Rice Milk Extracts, Natural Oil Blend, Sodium Palmate, Glycerin, Jasmine Extract',
     sizes: ['100g'],
-    img: 'public/images/milky_rice_soap.jpg'
+    img: 'images/milky_rice_soap.jpg'
   },
   'palash-soap': {
     name: 'AVD Palash Bath Soap',
@@ -365,7 +365,7 @@ const productDatabase = {
     desc: 'Premium palash bath soap best for natural skin detox and glow. Nourishes, cleanses, and refreshes the skin with traditional palash flower extracts.',
     ingredients: 'Palash Flower Extracts, Hydrating Oil Blend, Sodium Palmate, Glycerin, Floral Oils',
     sizes: ['100g'],
-    img: 'public/images/palash_soap.jpg'
+    img: 'images/palash_soap.jpg'
   },
   'dtan-soap': {
     name: 'AVD D-Tan Bath Soap',
@@ -373,7 +373,7 @@ const productDatabase = {
     desc: 'Premium D-Tan bath soap best for D-Tan and skin brightening. Deeply cleanses, exfoliates, and reduces tan with natural extracts.',
     ingredients: 'Kojic Acid, Licorice Extracts, Milk Proteins, Sodium Palmate, Glycerin',
     sizes: ['100g'],
-    img: 'public/images/dtan_soap.jpg'
+    img: 'images/dtan_soap.jpg'
   },
   'cool-mint-soap': {
     name: 'AVD Cool Mint Bath Soap',
@@ -381,7 +381,7 @@ const productDatabase = {
     desc: 'Premium Cool Mint glycerin transparent bath soap. Refreshes your skin and senses with cooling menthol and mint extracts.',
     ingredients: 'Mint Extract, Menthol Crystals, Pure Glycerin, Sodium Palmate, Aqua',
     sizes: ['100g'],
-    img: 'public/images/cool_mint_soap.jpg'
+    img: 'images/cool_mint_soap.jpg'
   },
   'rose-soap': {
     name: 'AVD Rose Bath Soap',
@@ -389,7 +389,7 @@ const productDatabase = {
     desc: 'Premium Rose glycerin transparent bath soap for soft, smooth, and glowing skin. Deeply moisturizing and gentle on skin.',
     ingredients: 'Rose Extract, Pure Glycerin, Essential Oil Blend, Sodium Palmate, Aqua',
     sizes: ['100g'],
-    img: 'public/images/rose_soap.jpg'
+    img: 'images/rose_soap.jpg'
   }
 };
 
