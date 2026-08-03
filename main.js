@@ -362,15 +362,47 @@ const productDatabase = {
     desc: 'Super-concentrated degreasing dishwash formula powered by real lemon extracts. Neutralizes food odors instantly and leaves utensils sparkling clean with a single drop.',
     ingredients: 'Active Lemon Enzymes, Surfactant Blend, Aloe Vera Skin-Protection Extracts',
     sizes: ['250ml', '500ml', '1L'],
-    img: 'public/images/dishwash_liquid.png'
+    img: 'public/images/dishwash_liquid.jpg'
   },
-  'bath-soap': {
-    name: 'Monagodu 501 Beauty Bath Soap',
+  'milky-rice-soap': {
+    name: 'AVD Milky Rice Bath Soap',
     category: 'Bath Soap',
-    desc: 'Infused with natural moisturizers and creamy milk proteins to gently cleanse and hydrate. Promotes smooth, glowing skin with every wash, suitable for all skin types.',
-    ingredients: 'Sodium Palmate, Glycerin, Milk Lipids, Hydrating Oils, Floral Fragrance',
-    sizes: ['75g', '125g'],
-    img: 'public/images/bath_soap.png'
+    desc: 'Premium milky rice bath soap best for gentle skin brightening. Nourishes skin, moisturizes, and brightens skin tone with natural milk and rice extracts.',
+    ingredients: 'Rice Milk Extracts, Natural Oil Blend, Sodium Palmate, Glycerin, Jasmine Extract',
+    sizes: ['100g'],
+    img: 'public/images/milky_rice_soap.jpg'
+  },
+  'palash-soap': {
+    name: 'AVD Palash Bath Soap',
+    category: 'Bath Soap',
+    desc: 'Premium palash bath soap best for natural skin detox and glow. Nourishes, cleanses, and refreshes the skin with traditional palash flower extracts.',
+    ingredients: 'Palash Flower Extracts, Hydrating Oil Blend, Sodium Palmate, Glycerin, Floral Oils',
+    sizes: ['100g'],
+    img: 'public/images/palash_soap.jpg'
+  },
+  'dtan-soap': {
+    name: 'AVD D-Tan Bath Soap',
+    category: 'Bath Soap',
+    desc: 'Premium D-Tan bath soap best for D-Tan and skin brightening. Deeply cleanses, exfoliates, and reduces tan with natural extracts.',
+    ingredients: 'Kojic Acid, Licorice Extracts, Milk Proteins, Sodium Palmate, Glycerin',
+    sizes: ['100g'],
+    img: 'public/images/dtan_soap.jpg'
+  },
+  'cool-mint-soap': {
+    name: 'AVD Cool Mint Bath Soap',
+    category: 'Bath Soap',
+    desc: 'Premium Cool Mint glycerin transparent bath soap. Refreshes your skin and senses with cooling menthol and mint extracts.',
+    ingredients: 'Mint Extract, Menthol Crystals, Pure Glycerin, Sodium Palmate, Aqua',
+    sizes: ['100g'],
+    img: 'public/images/cool_mint_soap.jpg'
+  },
+  'rose-soap': {
+    name: 'AVD Rose Bath Soap',
+    category: 'Bath Soap',
+    desc: 'Premium Rose glycerin transparent bath soap for soft, smooth, and glowing skin. Deeply moisturizing and gentle on skin.',
+    ingredients: 'Rose Extract, Pure Glycerin, Essential Oil Blend, Sodium Palmate, Aqua',
+    sizes: ['100g'],
+    img: 'public/images/rose_soap.jpg'
   },
   'dishwash-bar': {
     name: 'Monagodu 501 Dishwash Bar',
