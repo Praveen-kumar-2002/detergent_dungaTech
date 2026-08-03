@@ -316,46 +316,6 @@ function initBackToTop() {
 
 /* --- PRODUCT DETAILS MODAL --- */
 const productDatabase = {
-  'washing-powder': {
-    name: 'Monagodu 501 Washing Powder',
-    category: 'Detergent Powder',
-    desc: 'Advanced formulation designed to lift and dissolve the toughest grease, mud, and tea stains. Active micro-crystals penetrate deep into fabrics, guaranteeing a bright wash and long lasting freshness that keeps your clothes feeling brand new.',
-    ingredients: 'Sodium Carbonate, Linear Alkylbenzene Sulfonate, Enzymes, Brightening Agents, Premium Fragrance',
-    sizes: ['500g', '1kg', '3kg', '5kg'],
-    img: 'public/images/washing_powder.png'
-  },
-  'detergent-cake': {
-    name: 'Monagodu 501 Detergent Cake',
-    category: 'Detergent Cake',
-    desc: 'Power-packed detergent bar that lasts longer and scrubs cleaner. Highly effective for collar and cuff cleaning, preserving color vibrancy while remaining gentle on hands.',
-    ingredients: 'Sodium Silicate, Mineral Fillers, Coconut Oil Acids, Optical Brighteners, Blueing Agents',
-    sizes: ['75g', '150g', '250g'],
-    img: 'public/images/detergent_cake.png'
-  },
-  'liquid-detergent': {
-    name: 'Monagodu 501 Liquid Detergent',
-    category: 'Liquid Detergent',
-    desc: 'High-efficiency liquid wash optimized for both front and top-loading washing machines. Dissolves instantly without leaving residue, nourishing fabrics and enhancing clothing lifespan.',
-    ingredients: 'Anionic Surfactants, Nonionic Surfactants, Fabric Softening Polymers, Fragrance Extract',
-    sizes: ['500ml', '1L', '5L'],
-    img: 'public/images/liquid_detergent.png'
-  },
-  'fabric-conditioner': {
-    name: 'Monagodu 501 Fabric Conditioner',
-    category: 'Fabric Conditioner',
-    desc: 'Infuse your garments with luxurious softness and a therapeutic Lavender floral fragrance. Prevents static cling, smooths fibers, and ensures clothes feel light and comfortable all day.',
-    ingredients: 'Cationic Surfactants, Softening Emulsions, Lavender Fragrance Microcapsules',
-    sizes: ['500ml', '1L'],
-    img: 'public/images/fabric_conditioner.png'
-  },
-  'floor-cleaner': {
-    name: 'Monagodu 501 Floor Cleaner',
-    category: 'Floor Cleaner',
-    desc: 'Disinfectant floor cleaner that kills 99.9% of germs. Removes heavy grime, grease, and dirt to deliver crystal-clear, streak-free, shiny floors with a refreshing citrus scent.',
-    ingredients: 'Benzalkonium Chloride, Non-ionic Surfactants, Citrus Extract, Colorants, Deionized Water',
-    sizes: ['500ml', '1L', '5L'],
-    img: 'public/images/floor_cleaner.png'
-  },
   'dishwash-liquid': {
     name: 'Monagodu 501 Dishwash Liquid',
     category: 'Dishwash Liquid',
@@ -363,6 +323,38 @@ const productDatabase = {
     ingredients: 'Active Lemon Enzymes, Surfactant Blend, Aloe Vera Skin-Protection Extracts',
     sizes: ['250ml', '500ml', '1L'],
     img: 'public/images/dishwash_liquid.jpg'
+  },
+  'coffee-soap': {
+    name: 'AVD Coffee Bath Soap',
+    category: 'Bath Soap',
+    desc: 'Premium coffee bath soap best for gentle exfoliation and deeply cleansing the skin. Promotes smooth, glowing skin with a rich coffee aroma and natural extracts.',
+    ingredients: 'Coffee Extracts, Natural Oils, Sodium Palmate, Glycerin, Coffee Grounds',
+    sizes: ['100g'],
+    img: 'public/images/coffee_soap.jpg'
+  },
+  'lemon-soap': {
+    name: 'AVD Lemon Bath Soap',
+    category: 'Bath Soap',
+    desc: 'Premium lemon bath soap designed for deep cleansing and oil control. Refreshes, purifies, and brightens skin with natural lemon extracts.',
+    ingredients: 'Lemon Extracts, Essential Oils, Sodium Palmate, Glycerin, Brightening Agents',
+    sizes: ['100g'],
+    img: 'public/images/lemon_soap.jpg'
+  },
+  'neem-soap': {
+    name: 'AVD Neem Bath Soap',
+    category: 'Bath Soap',
+    desc: 'Premium neem bath soap formulated for skin infection problems. Fights bacteria, deep cleanses, and controls oil with natural neem extracts.',
+    ingredients: 'Neem Extracts, Herbal Oil Blend, Sodium Palmate, Glycerin, Anti-bacterial Agents',
+    sizes: ['100g'],
+    img: 'public/images/neem_soap.jpg'
+  },
+  'multani-mitti-soap': {
+    name: 'AVD Multani Mitti Bath Soap',
+    category: 'Bath Soap',
+    desc: 'Premium multani mitti bath soap best for oil control and deep cleansing. Absorbs excess oil, detoxifies, refreshes, and purifies the skin.',
+    ingredients: 'Multani Mitti (Fuller\'s Earth), Natural Extract Blend, Sodium Palmate, Glycerin',
+    sizes: ['100g'],
+    img: 'public/images/multani_mitti_soap.jpg'
   },
   'milky-rice-soap': {
     name: 'AVD Milky Rice Bath Soap',
@@ -403,14 +395,6 @@ const productDatabase = {
     ingredients: 'Rose Extract, Pure Glycerin, Essential Oil Blend, Sodium Palmate, Aqua',
     sizes: ['100g'],
     img: 'public/images/rose_soap.jpg'
-  },
-  'dishwash-bar': {
-    name: 'Monagodu 501 Dishwash Bar',
-    category: 'Dishwash Bar',
-    desc: 'An effective dishwashing bar with the power of lemon and clay minerals. Cuts through burnt food crusts and oily residues effortlessly, offering hygienic and bright kitchenware.',
-    ingredients: 'Acid Slurry, Soda Ash, Lemon Peel Oils, Clay Abrasive Powders',
-    sizes: ['200g', '400g'],
-    img: 'public/images/dishwash_bar.png'
   }
 };
 
