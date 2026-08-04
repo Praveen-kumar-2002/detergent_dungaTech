@@ -295,8 +295,13 @@ body:hover .cursor-glow {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
+  gap: 1.5rem;
   list-style: none;
+}
+@media (max-width: 992px) {
+  .nav-menu {
+    gap: 2rem;
+  }
 }
 .btn-catalogue {
   display: inline-flex;
